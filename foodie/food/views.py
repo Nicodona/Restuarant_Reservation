@@ -8,6 +8,10 @@ from .models import Menu
 
 # Views goes here
 
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
+
 def home(request):
     new = User.objects.all()
     return HttpResponse(f'<h1> welcome yoo</h1> <h2> three amigos</h2>')
@@ -28,10 +32,10 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            if user.is_staff == True:
-                return redirect('resto_dashboard')
+            if user.is_staff:
+                return redirect('/')
             else:
-                return redirect('resto_client')
+                return redirect('/')
 
         else:
             messages.info(request, "wrong credentials please try again")
@@ -141,14 +145,17 @@ def contact(request):
 
 def index(request):
     if request.method == 'POST':
-        query = request.POST['query']
+        word = request.POST['query']
 
-        if Menu.objects.filter(name=query).exists():
-            searches = Menu.objects.filter(name=query)
-            return render(request, 'index.html', {'searches':searches})
+        queries = word.split(" ")
 
-        else:
-            messages.info(request, 'Oops Be like the no cook your food today oh! try another favourite')
-            return redirect('index')
+        for query in queries:
+            if Menu.objects.filter(name=query).exists():
+                searches = Menu.objects.filter(name=query)
+                return render(request, 'index.html', {'searches':searches})
+
+            else:
+                messages.info(request, 'Oops Be like the no cook your food today oh! try another favourite')
+                return redirect('index')
     else:
         return render(request, 'index.html')

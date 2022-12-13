@@ -57,7 +57,7 @@
             <a class="nav-link active" aria-current="page" href="{% url 'contact' %}">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href={% url 'login' %}>Login</a>
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
           </li>	
           <li class="nav-item">
             <a class="nav-link" href="{% url 'signup' %}"> <button type="button" class="btn btn-success btn-sm">Sign UP</button></a>
@@ -88,7 +88,7 @@
                   <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
                 </div>
                 
-                <a class="nav-link" href="#"> <button type="button" class="btn btn-primary">Login</button></a>
+                 <button type="button" class="btn btn-primary">Login</button>
 
                 <br> <br> <br>
                 <p>Don't yet have an account?  <span><a href="{% url 'signup' %}">Sign Up</a></span> </p>
