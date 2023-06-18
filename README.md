@@ -5,7 +5,7 @@ This is a potfolio project from alx students that will help reserve local dishes
 * Deployed site: (for now follow the instructions to run locally)  https://github.com/Nicodona/Restuarant_Reservation
 Authors LinkedIn: 
 - Nfon Andrew(https://www.linkedin.com/in/nfon-andrew-7703a11a0/)
-- Njei Nicodemus(https://www.linkedin.com/in/njei-nicodemus-281a7b1b3/)
+- Njei Nicodemus(https://www.linkedin.com/in/njei-nicodemus/)
 - Lukong Anne (https://www.linkedin.com/in/lukong-anne/)
 
 ## Getting Started
